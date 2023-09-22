@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>パスワード入力</title>
+</head>
+<body>
+    <script>
+        var password = prompt("パスワードを入力してください");
+
+        if (password === "アモアスチート") {
+            loadProtectedContent();
+        } else {
+            alert("パスワードが違います");
+            // パスワードが違う場合は何も表示しない
+        }
+
+        function loadProtectedContent() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "1html", true); // 保護されたコンテンツのURLを指定
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // 保護されたコンテンツを表示
+                    document.body.innerHTML = xhr.responseText;
+                }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
