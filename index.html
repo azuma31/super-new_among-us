@@ -16,7 +16,7 @@
 
         function loadProtectedContent() {
             var xhr = new XMLHttpRequest();
-            xhr.open("GET", "1html", true); // 保護されたコンテンツのURLを指定
+            xhr.open("GET", "1.html", true); // 保護されたコンテンツのURLを指定
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     // 保護されたコンテンツを表示
